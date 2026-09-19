@@ -1,0 +1,7 @@
+openai
+pytest
+fastapi
+sqlalchemy
+pydantic
+pydantic-settings
+pytest
