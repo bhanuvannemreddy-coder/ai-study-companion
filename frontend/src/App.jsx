@@ -6,7 +6,6 @@ import {
   MessageSquareText,
   Sparkles,
 } from "lucide-react";
-
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import Activity from "./pages/Activity";
@@ -58,27 +57,31 @@ function Landing() {
       </header>
 
       <main className="relative z-10 mx-auto max-w-7xl px-6">
-        <section className="grid min-h-[calc(100vh-81px)] items-center gap-16 py-16 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
+        {/* ================================================= */}
+        {/* HERO */}
+        {/* ================================================= */}
+
+        <section className="flex min-h-[calc(100vh-81px)] items-center justify-center py-20">
+          <div className="max-w-4xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-400/15 bg-indigo-500/10 px-3 py-1.5 text-sm text-indigo-300">
               <Sparkles className="h-4 w-4" />
               Your learning, with context
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight sm:text-6xl">
-              Turn your study material into a{" "}
+            <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl">
+              Turn your study material into{" "}
               <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                smarter learning journey.
+                a smarter learning journey.
               </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
               Upload your materials, ask questions grounded in your content,
               practice with adaptive quizzes, and see how your understanding
               grows over time.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap justify-center gap-4">
               <Link
                 to="/login"
                 className="group inline-flex items-center gap-2 rounded-xl bg-indigo-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:bg-indigo-400"
@@ -95,7 +98,7 @@ function Landing() {
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
+            <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-500">
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400" />
                 Project-based learning
@@ -112,71 +115,26 @@ function Landing() {
               </span>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="absolute -inset-8 rounded-[2rem] bg-indigo-500/10 blur-3xl" />
-
-            <div className="relative rounded-3xl border border-white/10 bg-slate-900/85 p-5 shadow-2xl shadow-black/30 backdrop-blur">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-slate-500">Current project</p>
-
-                    <h3 className="mt-1 text-lg font-semibold">
-                      Machine Learning
-                    </h3>
-                  </div>
-
-                  <div className="rounded-xl bg-indigo-500/10 p-2.5">
-                    <Brain className="h-5 w-5 text-indigo-400" />
-                  </div>
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900 p-4">
-                  <div className="flex items-center gap-3">
-                    <FileText className="h-5 w-5 text-violet-400" />
-
-                    <div>
-                      <p className="text-sm font-medium">
-                        Machine Learning Notes.pdf
-                      </p>
-
-                      <p className="text-xs text-slate-500">Ready · 10 pages</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 rounded-2xl border border-slate-800 bg-slate-900 p-4">
-                  <div className="flex items-center gap-3">
-                    <MessageSquareText className="h-5 w-5 text-emerald-400" />
-
-                    <div>
-                      <p className="text-sm font-medium">Tutor</p>
-
-                      <p className="text-xs text-slate-500">
-                        Ask something from your material
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Concept mastery</span>
-
-                    <span className="font-semibold text-white">72%</span>
-                  </div>
-
-                  <div className="mt-2 h-2 rounded-full bg-slate-800">
-                    <div className="h-2 w-[72%] rounded-full bg-gradient-to-r from-indigo-500 to-violet-500" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
+        {/* ================================================= */}
+        {/* HOW IT WORKS */}
+        {/* ================================================= */}
+
         <section id="how-it-works" className="pb-20 pt-10">
+          <div className="mb-10 text-center">
+            <p className="text-sm font-medium text-indigo-400">How it works</p>
+
+            <h2 className="mt-2 text-3xl font-bold tracking-tight">
+              One place for your learning journey
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-500">
+              Organize your materials, learn with context, test your
+              understanding, and track your progress.
+            </p>
+          </div>
+
           <div className="grid gap-4 md:grid-cols-3">
             {[
               {
@@ -184,13 +142,11 @@ function Landing() {
                 title: "Bring your material",
                 text: "Upload PDFs and keep each learning journey organized inside its own project.",
               },
-
               {
                 icon: MessageSquareText,
                 title: "Learn with context",
                 text: "Ask your Tutor questions and retrieve relevant evidence from your project material.",
               },
-
               {
                 icon: Sparkles,
                 title: "Improve continuously",
